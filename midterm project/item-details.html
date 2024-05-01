@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F8C794;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+ 
+        .item-details {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .item-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+      
+
+        .item-info {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="item-details-container">
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemId = urlParams.get('id');
+
+        fetch(`https://jsonplaceholder.typicode.com/photos/${itemId}`)
+            .then(response => response.json())
+            .then(item => {
+                const itemDetailsContainer = document.getElementById('item-details-container');
+                const itemDetailsElement = document.createElement('div');
+                itemDetailsElement.classList.add('item-details');
+                itemDetailsElement.innerHTML = `
+                    <h2 class="item-title">${item.title}</h2>
+                    <img src="${item.url}" alt="${item.title}">
+                    <p>ID: ${item.id}</p>
+                    <p>Album ID: ${item.albumId}</p>
+                    <p>Thumbnail URL: ${item.thumbnailUrl}</p>
+                `;
+                itemDetailsContainer.appendChild(itemDetailsElement);
+            })
+           
+    </script>
+</body>
+</html>

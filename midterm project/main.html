@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F8C794;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .item img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .item-title {
+            font-weight: bold;
+        }
+
+        .details-container {
+            display: none;
+        }
+
+        .details-container.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="items-container">
+    </div>
+
+    <div class="container details-container" id="details-container">
+        <h2 id="details-title"></h2>
+        <p id="details-body"></p>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <script src="main.js"></script>

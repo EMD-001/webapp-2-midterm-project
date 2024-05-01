@@ -1,0 +1,76 @@
+<!-- Create your HTML file-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+     body {
+         font-family: Arial, sans-serif;
+         background-color: #F8C794;
+     }
+
+     .container {
+         max-width: 450px;
+         margin: 25px auto;
+         padding:  50px;
+         border: 1px solid gray;
+         border-radius: 5px;
+         margin-top: 250px;
+        background-color: white;
+     }
+
+     #btn {
+            padding: 10px;
+            background-color: #24a0ed;
+            color: #fff;
+            border-radius: 4px;
+            border: 1px solid white;
+            cursor: pointer;
+            font-size: 15px;
+            color: black; 
+            border: bold; 
+            margin-left: 10px; 
+            position: relative;
+           
+            display: inline-block;
+        }
+
+      #btn:hover {
+            background-color: gray;
+            color: white;
+      }
+
+      h1 {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 1px; 
+      }
+
+     #username {
+            font-size: 18px; 
+            /* padding-top: 10px;  */
+            width: 250px; 
+    }
+
+
+ </style>
+</head>
+<body>
+
+    <div class="container">
+    <h1>WELCOME!</h1>
+    <form id="loginForm">
+    <label for="username">Username</label>
+    <input type="text" id="username" required>
+    <button type="submit" id="btn">Submit</button>
+    </form>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
